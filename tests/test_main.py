@@ -9,7 +9,7 @@ def test_profile_endpoint():
 
     assert response.status_code == 200
     assert data["username"] == "Aaron"
-    assert data["full_name"] == "Aaron D Johnson"
+    assert data["full_name"] == "Aaron D. Johnson"
     assert data["primary_language"] == "Python"
     assert data["secondary_language"] == "SQL" 
 
@@ -37,4 +37,3 @@ def test_invalid_route_404():
     response = client.get("/defunk_route")
     assert response.status_code == 404    
 
-    
