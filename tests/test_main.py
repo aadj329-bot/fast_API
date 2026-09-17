@@ -10,8 +10,8 @@ def test_profile_endpoint():
     assert response.status_code == 200
     assert data["username"] == "Aaron"
     assert data["full_name"] == "Aaron D. Johnson"
-    assert data["primary_language"] == "Python"
-    assert data["secondary_language"] == "SQL" 
+    assert data["primary_language"] == ["Python"]
+    assert data["secondary_language"] == ["SQL"] 
 
 def test_skills_endpoint():
     response = client.get("/skills")
