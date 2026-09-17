@@ -13,7 +13,7 @@ router = APIRouter(prefix="/status")
 @router.get("", response_model=Status)
 def get_status():
     return Status(
-        current_project="Building personal FastAPI portfolio API",
+        current_projects="Building personal FastAPI portfolio API",
         learning="Advanced Python, backend development, GitHub workflows",
         goals=[
             "Transistion into QA Automation / Backend Python",
