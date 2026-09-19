@@ -14,3 +14,6 @@ app.include_router(status.router)
 def root():
     return {"message": "Welcome to Aaron's GitHub API"}
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
