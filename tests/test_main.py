@@ -3,6 +3,12 @@ from app.main import app
 
 client = TestClient(app)
 
+def test_root_endpoint():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Welcome to Aaron's GitHub API"}
+
+
 def test_profile_endpoint():
     response = client.get("/profile")
     data = response.json()
@@ -35,5 +41,25 @@ def test_status_endpoints():
 
 def test_invalid_route_404():
     response = client.get("/defunk_route")
-    assert response.status_code == 404    
+    assert response.status_code == 404   
+
+
+def test_profile_has_expected_field_types():
+    response = client.get("/profile")
+    data = response.json()
+    assert isinstance(data["username"], str)
+    assert isinstance(data["primary_language"], list)
+    assert isinstance(data["projects_count"], int)
+
+def test_post_to_profile_is_not_allowed():
+    response = client.post("/profile")
+    assert response.status_code == 405
+
+def test_status_goals_not_empty():
+    response = client.get("/status")
+    data = response.json()
+    assert isinstance(data["goals"], list)
+    assert len(data["goals"]) > 0
+
+
 
