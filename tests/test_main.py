@@ -30,7 +30,7 @@ def test_skills_endpoint():
     assert "GitHub" in data["tools"]
     assert "CI/CD" in data["concepts"]
 
-def test_status_endpoints():
+def test_status_endpoint():
     response = client.get("/status")
     data = response.json()
 
@@ -38,6 +38,32 @@ def test_status_endpoints():
     assert data["motivation_level"] == "High" 
     assert len(data["goals"]) >= 3
     assert data["current_projects"] == "Building personal FastAPI portfolio API"
+
+def test_projects_endpoint():
+    response = client.get("/projects")
+    data = response.json()
+
+    assert response.status_code == 200
+    assert isinstance(data, list)
+    assert len(data) == 2
+
+    project_names = {project["name"] for project in data}
+
+    assert "fastAPI Portfolio API" in project_names
+    assert "File Organizer" in project_names 
+
+    fastapi_project = next(
+        project for project in data 
+        if project["name"] == "fastAPI Portfolio API" 
+    )
+
+    file_organizer_project = next(
+        project for project in data
+        if project["name"] == "File Organizer"
+    )
+
+    assert fastapi_project["visibility"] == "public"
+    assert file_organizer_project["visibility"] == "private"
 
 def test_health_endpoint():
     response = client.get("/health")

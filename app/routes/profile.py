@@ -1,12 +1,12 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
+from pydantic import BaseModel, HttpUrl 
 
 class Profile(BaseModel):
     username: str
     full_name: str
     bio: str
     location: str
-    github_url: str
+    github_url: HttpUrl 
     primary_language: list
     secondary_language: list
     current_focus: str
