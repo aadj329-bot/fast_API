@@ -13,19 +13,20 @@ This project showcases my profile, skills, current status, and portfolio project
 - Includes a health-check endpoint
 - Uses Pydantic models to validate API data
 - Includes automated tests with pytest
-- Runs test automatically with the GitHub Actions
+- Runs test automatically with GitHub Actions
 
 ## Technologies
 
 - Python
 - FastAPI
 - Pydantic
-- Uvicorn 
-- Pytest 
+- Uvicorn
+- Pytest
 - GitHub Actions
 
 ## Project Structure
 
+```text
 fast_API_Portfolio_API/
 ├── app/
 │   ├── main.py
@@ -39,75 +40,85 @@ fast_API_Portfolio_API/
 ├── .github/
 │   └── workflows/
 │       └── test.yml
+├── .gitignore
 ├── pyproject.toml
 ├── requirements.txt
 ├── run.py
 └── README.md
+```
 
 ## Setup
 
 Clone the repository:
 
+```bash
 git clone https://github.com/aadj329-bot/fast_API_Portfolio_API.git
 cd fast_API_Portfolio_API
+```
 
 Create a virtual environment:
 
 ### Windows PowerShell
 
+```bash
 python -m venv .venv
 .venv\Scripts\Activate.ps1
+```
 
 ### macOS/Linux
 
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 Install the project dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
 ## Run the API
 
 Start the application with:
 
+```bash
 python run.py
+```
 
 The API will be available at:
 
-http://127.0.0.1.8000
+http://127.0.0.1:8000
 
 FastAPI also provides interactive documentation at:
 
-http://127.0.0.1.8000/docs
+http://127.0.0.1:8000/docs
 
 With an alternative documentation page at:
 
-http://127.0.0.1.8000/redoc
+http://127.0.0.1:8000/redoc
 
 ## Available Endpoints
 
-Method  |    Endpoint    |      Description
-        |                |
- GET    |       /        |  Returns a welcome message
-        |                |
- GET    |   /health      |  Returns the health status of the API
-        |                |  
- GET    |   /profile     |  Returns profile information
-        |                |
- GET    |   /skills      |  Returns skills and technologies
-        |                |
- GET    |   /status      |  Returns current status and goals
-        |                |
- GET    |   /projects    |  Returns portfolio projects
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Returns a welcome message |
+| GET | `/health` | Returns the health status of the API |
+| GET | `/profile` | Returns the profile information |
+| GET | `/skills` | Returns skills and technologies |
+| GET | `/status` | Returns current status and goals |
+| GET | `/projects` | Returns portfolio projects | 
+
 
 ## Running Tests
 
 Run the test suite with:
 
+```bash
 python -m pytest
+```
 
-The tests will verify a number of aspect:
+The tests will verify several aspect:
 
 - successful response from the API endpoints
 - expected response data
@@ -116,25 +127,25 @@ The tests will verify a number of aspect:
 - response fields having the expected types
 - project data being returned correctly
 
-## Contuinous Integration 
+## Continuous Integration
 
 This project uses GitHub Actions for continuous integration.
 
 The workflow runs automatically when:
 
-    - code is pushed to the repository
-    - a pull request is opened or updated
+- Code is pushed to the repository
+- A pull request is opened or updated
 
 The workflow:
 
     1. Check out the repository
-    2. installs Python
-    3. installs depenndencies from requirements.txt
-    4. runs the pytest test suite
+    2. Install Python
+    3. Install dependencies from `requirements.txt`
+    4. Runs the pytest test suite
 
 The workflow file is located at:
 
-.github/workflows.test.yml
+.github/workflows/test.yml
 
 ## What I Am Learning
 
@@ -145,13 +156,13 @@ This project is helping me practice:
     - Creating routes and response models
     - Validating data with Pydantic
     - Writing automated tests
-    - using Git and GitHub
-    - using continuous integration
-    - improving code through small, tested changes
+    - Using Git and GitHub
+    - Using continuous integration
+    - Improving code through small, tested changes
 
 ## Future Improvements
 
-Future Improvements will include:
+Future improvements will include:
 
     - Adding more portfolio projects
     - Connecting the API to a database
