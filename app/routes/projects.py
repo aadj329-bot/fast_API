@@ -25,6 +25,6 @@ def projects():
             description="A Python project for organizing files.",
             language="Python",
             url="https://github.com/aadj329-bot/file_organizer",
-            visibility="private"
+            visibility="public"
         )
     ]
