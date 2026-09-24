@@ -63,7 +63,7 @@ def test_projects_endpoint():
     )
 
     assert fastapi_project["visibility"] == "public"
-    assert file_organizer_project["visibility"] == "private"
+    assert file_organizer_project["visibility"] == "public"
 
 def test_health_endpoint():
     response = client.get("/health")
