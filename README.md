@@ -1,6 +1,8 @@
 # FastAPI Portfolio API
 
-A beginner-friendly portfolio API built with Python and FastAPI. It showcases my profile, skills, current status, and portfolio projects through simple API endpoints.
+A portfolio API built with Python and FastAPI. Built to be beginner-friendly.
+
+This project showcases my profile, skills, current status, and portfolio projects through simple API endpoints.
 
 ## Features
 
@@ -11,7 +13,7 @@ A beginner-friendly portfolio API built with Python and FastAPI. It showcases my
 - Includes a health-check endpoint
 - Uses Pydantic models to validate API data
 - Includes automated tests with pytest
-- Runs tests automatically with GitHub Actions
+- Runs test automatically with GitHub Actions
 
 ## Technologies
 
@@ -58,7 +60,7 @@ Create a virtual environment:
 
 ### Windows PowerShell
 
-```powershell
+```bash
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
@@ -86,21 +88,15 @@ python run.py
 
 The API will be available at:
 
-```text
 http://127.0.0.1:8000
-```
 
 FastAPI also provides interactive documentation at:
 
-```text
 http://127.0.0.1:8000/docs
-```
 
-An alternative documentation page is also available at:
+With an alternative documentation page at:
 
-```text
 http://127.0.0.1:8000/redoc
-```
 
 ## Available Endpoints
 
@@ -108,22 +104,23 @@ http://127.0.0.1:8000/redoc
 |---|---|---|
 | GET | `/` | Returns a welcome message |
 | GET | `/health` | Returns the health status of the API |
-| GET | `/profile` | Returns profile information |
+| GET | `/profile` | Returns the profile information |
 | GET | `/skills` | Returns skills and technologies |
 | GET | `/status` | Returns current status and goals |
-| GET | `/projects` | Returns portfolio projects |
+| GET | `/projects` | Returns portfolio projects | 
+
 
 ## Running Tests
 
 Run the test suite with:
 
 ```bash
-python -m pytest
+python -m pytest --cov=app --cov-report=term-missing
 ```
 
-The tests verify several aspects:
+The tests will verify several aspects:
 
-- successful responses from the API endpoints
+- successful response from the API endpoints
 - expected response data
 - invalid routes returning 404
 - unsupported methods returning 405
@@ -136,47 +133,45 @@ This project uses GitHub Actions for continuous integration.
 
 The workflow runs automatically when:
 
-- code is pushed to the repository
-- a pull request is opened or updated
+- Code is pushed to the repository
+- A pull request is opened or updated
 
 The workflow:
 
-1. Checks out the repository
-2. Installs Python
-3. Installs dependencies from `requirements.txt`
-4. Runs the pytest test suite
+    1. Check out the repository
+    2. Install Python
+    3. Install dependencies from `requirements.txt`
+    4. Runs the pytest test suite
 
 The workflow file is located at:
 
-```text
 .github/workflows/test.yml
-```
 
 ## What I Am Learning
 
 This project is helping me practice:
 
-- Python project organization
-- Building REST APIs with FastAPI
-- Creating routes and response models
-- Validating data with Pydantic
-- Writing automated tests
-- Using Git and GitHub
-- Using continuous integration
-- Improving code through small, tested changes
+    - Python project organization
+    - Building REST APIs with FastAPI
+    - Creating routes and response models
+    - Validating data with Pydantic
+    - Writing automated tests
+    - Using Git and GitHub
+    - Using continuous integration
+    - Improving code through small, tested changes
 
 ## Future Improvements
 
 Future improvements will include:
 
-- Adding more portfolio projects
-- Connecting the API to a database
-- Adding authentication
-- Adding project filtering
-- Adding individual project lookup by ID
-- Deploying the API
-- Adding a frontend
-- Improved error handling
+    - Adding more portfolio projects
+    - Connecting the API to a database
+    - Adding authentication
+    - Adding project filtering
+    - Adding individual project lookup by ID
+    - Deploying the API
+    - Adding a frontend
+    - Improved error handling
 
 ## Author
 
