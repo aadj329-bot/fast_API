@@ -1,8 +1,6 @@
 # FastAPI Portfolio API
 
-A portfolio API built with Python and FastAPI. Built to be beginner-friendly.
-
-This project showcases my profile, skills, current status, and portfolio projects through simple API endpoints.
+A beginner-friendly portfolio API built with Python and FastAPI. It showcases my profile, skills, current status and portfolio projects through simple API endpoints.
 
 ## Features
 
@@ -115,7 +113,7 @@ http://127.0.0.1:8000/redoc
 Run the test suite with:
 
 ```bash
-python -m pytest --cov=app --cov-report=term-missing
+python -m pytest --cov=app --cov-report=term-missing --cov-report=xml --cov-fail-under=95
 ```
 
 The tests will verify several aspects:
@@ -141,7 +139,8 @@ The workflow:
     1. Check out the repository
     2. Install Python
     3. Install dependencies from `requirements.txt`
-    4. Runs the pytest test suite
+    4. Runs the pytest test suite with coverage
+    5. Uploads coverage results to Codecov
 
 The workflow file is located at:
 
