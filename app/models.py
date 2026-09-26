@@ -33,7 +33,7 @@ class Skill(Base):
 
 class Status(Base):
     """Database model for current status"""
-    __tablename__ = "status"
+    __tablename__ = "statuses"
 
     id = Column(Integer, primary_key=True, index=True)
     current_projects = Column(String, nullable=False)
