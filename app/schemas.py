@@ -5,13 +5,13 @@ from typing import Optional
 # Profile schemas
 class ProfileBase(BaseModel):
     username: str
-    full_name: str 
+    full_name: str
     bio: str
-    location: str 
+    location: str
     github_url: HttpUrl
     primary_language: list[str]
-    secondary_language: list[str]  
-    current_focus: str 
+    secondary_language: list[str]
+    current_focus: str
     learning_path: str
     projects_count: int
 
@@ -27,7 +27,7 @@ class ProfileUpdate(BaseModel):
     location: Optional[str] = None
     github_url: Optional[HttpUrl] = None
     primary_language: Optional[list[str]] = None
-    secodary_language: Optional[list[str]] = None
+    secondary_language: Optional[list[str]] = None
     current_focus: Optional[str] = None
     learning_path: Optional[str] = None
     projects_count: Optional[int] = None
@@ -36,19 +36,19 @@ class ProfileUpdate(BaseModel):
 class Profile(ProfileBase):
     id: int
     created_at: datetime
-    updated_at: datetime 
-    
+    updated_at: datetime
+
     class Config:
-        from_attributes = True  # Allows Pydantic to read from SQLAlchemy model
+        from_attributes = True
 
 
 class SkillBase(BaseModel):
-    category: str 
-    name: str 
+    category: str
+    name: str
 
 
 class SkillCreate(SkillBase):
-    pass 
+    pass
 
 
 class Skill(SkillBase):
@@ -56,13 +56,13 @@ class Skill(SkillBase):
     created_at: datetime
 
     class Config:
-        from_attributes = True 
+        from_attributes = True
 
 
 class StatusBase(BaseModel):
-    current_projects: str 
-    learning: str 
-    goals: list[str] 
+    current_projects: str
+    learning: str
+    goals: list[str]
 
 
 class StatusCreate(StatusBase):
@@ -70,23 +70,23 @@ class StatusCreate(StatusBase):
 
 
 class Status(StatusBase):
-    id: int 
-    last_updated: datetime 
+    id: int
+    last_updated: datetime
 
     class Config:
         from_attributes = True
 
 
 class ProjectBase(BaseModel):
-    name: str 
-    description: str 
-    language: str 
+    name: str
+    description: str
+    language: str
     url: HttpUrl
-    visibility: str 
+    visibility: str
 
 
 class ProjectCreate(ProjectBase):
-    pass 
+    pass
 
 
 class ProjectUpdate(BaseModel):
@@ -98,9 +98,9 @@ class ProjectUpdate(BaseModel):
 
 
 class Project(ProjectBase):
-    id: int 
-    created_at: datetime 
-    updated_at: datetime 
+    id: int
+    created_at: datetime
+    updated_at: datetime
 
     class Config:
-        from_attribute = True
+        from_attributes = True

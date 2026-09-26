@@ -16,17 +16,18 @@ class Profile(Base):
     github_url = Column(String, nullable=False)
     primary_language = Column(JSON, nullable=False)
     secondary_language = Column(JSON, nullable=False)
+    current_focus = Column(String, nullable=False)
     learning_path = Column(String, nullable=False)
-    project_count = Column(Integer, nullable=False)
+    projects_count = Column(Integer, nullable=False)
     created_at = Column(DateTime, server_default=func.now(), nullable=False)
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
 class Skill(Base):
-    """Datebase model for skills"""
+    """Database model for skills"""
     __tablename__ = "skills"
 
     id = Column(Integer, primary_key=True, index=True)
-    category = Column(String, index=True, nullable=False)               # "languages", "framework", "tool", "concept"
+    category = Column(String, index=True, nullable=False)
     name = Column(String, nullable=False)
     created_at = Column(DateTime, server_default=func.now(), nullable=False)
 
@@ -38,12 +39,11 @@ class Status(Base):
     current_projects = Column(String, nullable=False)
     learning = Column(String, nullable=False)
     goals = Column(JSON, nullable=False)
-    motivation_level =Column(String, nullable=False)
     last_updated = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
 class Project(Base):
     """Database model for portfolio projects"""
-    __tablename__ = "statuses"
+    __tablename__ = "projects"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True, nullable=False)
@@ -53,5 +53,3 @@ class Project(Base):
     visibility = Column(String, nullable=False)
     created_at = Column(DateTime, server_default=func.now(), nullable=False)
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
-
-    
