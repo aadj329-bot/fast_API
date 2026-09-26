@@ -76,7 +76,6 @@ def test_status_endpoint():
     data = response.json()
 
     assert response.status_code == 200
-    assert data["motivation_level"] == "High" 
     assert len(data["goals"]) >= 3
     assert data["current_projects"] == "Building personal FastAPI portfolio API"
 

@@ -5,7 +5,6 @@ class Status(BaseModel):
     current_projects: str
     learning: str
     goals: list
-    motivation_level: str
     last_updated: str
 
 router = APIRouter(prefix="/status")
@@ -16,11 +15,10 @@ def get_status():
         current_projects="Building personal FastAPI portfolio API",
         learning="Advanced Python, backend development, GitHub workflows",
         goals=[
-            "Transistion into QA Automation / Backend Python",
+            "Transition into QA Automation / Backend Python",
             "Build portfolio projects",
             "Deploy FastAPI apps",
             "Grow GitHub activity"
         ],
-        motivation_level="High",
         last_updated="2026-09-15"
     )
