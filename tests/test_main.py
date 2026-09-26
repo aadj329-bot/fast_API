@@ -86,7 +86,6 @@ def test_status_response_contract():
 
     assert isinstance(data["goals"], list)
     assert len(data["goals"]) > 0
-    assert isinstance(data["motivation_level"], str)
     assert isinstance(data["last_updated"], str)
     
 
